@@ -1,0 +1,194 @@
+/* Global Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+    background-image: url("background.webp");
+    color: #eee;
+}
+
+/* Social Icons */
+.social-icons {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.social-icon {
+    color: #00f0ff;
+    margin-left: 15px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.social-icon:hover {
+    color: #ff00e1;
+}
+
+/* Loading Screen */
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #121212;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #00f0ff;
+    font-size: 1.5rem;
+    font-family: monospace;
+    text-align: center;
+    z-index: 999;
+}
+
+.loading-text {
+    animation: fadeInOut 1.5s infinite, typingEffect 2s steps(20) infinite;
+}
+
+@keyframes fadeInOut {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+}
+
+@keyframes typingEffect {
+    0% { width: 0; }
+    50% { width: 100%; }
+    100% { width: 0; }
+}
+
+/* Main Container */
+.container {
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+}
+
+header {
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 3rem;
+    color: #00f0ff;
+    text-shadow: 0 0 10px rgba(0, 240, 255, 0.7);
+}
+
+header p {
+    color: #888;
+    font-size: 1.1rem;
+}
+
+.chat-box {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
+}
+
+.messages {
+    max-height: 300px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+    padding-right: 10px;
+}
+
+.message {
+    margin: 10px 0;
+    text-align: left;
+}
+
+.message p {
+    background: #333;
+    padding: 10px;
+    border-radius: 8px;
+    display: inline-block;
+}
+
+.oracle p {
+    color: #00f0ff;
+    font-weight: bold;
+}
+
+.typing-animation {
+    color: #00f0ff;
+    font-size: 1.2em;
+    animation: typing 1.5s steps(5) infinite;
+}
+
+@keyframes typing {
+    0%, 50%, 100% { content: "•"; }
+    25%, 75% { content: "•••"; }
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background: #222;
+    color: #eee;
+    outline: none;
+    text-align: center;
+    font-size: 1rem;
+}
+
+footer {
+    margin-top: 20px;
+    font-size: 0.8rem;
+    color: #555;
+}
+
+/* Animated Background */
+.background-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #121212, #1d1d1d);
+    background-size: 400% 400%;
+    animation: gradientShift 10s ease infinite;
+    z-index: 0;
+    opacity: 0.5;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Mystery Particle Effect */
+.background-animation::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(0,240,255,0.1), transparent 70%);
+    background-size: 10px 10px;
+    opacity: 0.3;
+    animation: particleFade 5s linear infinite alternate;
+}
+
+@keyframes particleFade {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(50px); }
+}
